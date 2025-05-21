@@ -8,7 +8,7 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 
 const Header = () => {
-    const REGISTER_URL = `https://forms.gle/sQMQGzfvsjFndSsV7`;
+    const REGISTER_URL = `https://forms.gle/5xPiKVyxViWPQDKCA`;
     const { hash } = useLocation();
     const [openNavigation, setOpenNavigation] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);

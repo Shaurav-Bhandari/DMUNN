@@ -33,7 +33,7 @@ const SponsorLogo = ({ name, website, logoPath }) => {
         <img 
           src={logoPath} 
           alt={`${name} logo`} 
-          className={`max-h-16 max-w-full object-contain mb-2 ${name === "Makkuse" ? "h-16" : "h-12"}`}
+          className={`max-h-16 max-w-full object-contain mb-2 ${name === "Makkusé" ? "h-20" : "h-12"}`}
         />
         <p className="mt-4 text-lg text-gray-600">{name}</p>
       </div>

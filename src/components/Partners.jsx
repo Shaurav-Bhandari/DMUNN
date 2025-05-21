@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Shristi, DWIT, Siphal, UNCT } from '../assets';
+import Heading from '../constants/Heading';
 
 // Component for individual partner logo
 const PartnerLogo = ({ name, website, logoPath }) => {
@@ -11,7 +12,7 @@ const PartnerLogo = ({ name, website, logoPath }) => {
       target="_blank" 
       rel="noopener noreferrer"
       className={`flex items-center justify-center p-6 transition-all duration-300 
-                  bg-gray-200 rounded-lg ${isHovered ? 'shadow-xl' : 'shadow-md'}`}
+                  bg-white rounded-lg ${isHovered ? 'shadow-xl' : 'shadow-md'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ height: '180px' }}
@@ -44,11 +45,12 @@ const Partners = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full p-8 mx-auto my-16 bg-gray-100">
-      <h1 className="mb-16 text-6xl font-bold text-center text-navy-900">Our Partners</h1>
+    <div className="flex flex-col items-center w-full p-8 mx-auto my-16 bg-white">
+      <Heading className="h1 text-color-title bg-blue-650" title="Our Partners" />
       
       
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl p-8 rounded-3xl shadow-sm">
+      
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl p-8 rounded-3xl shadow-sm">
           {partners.map((partner, index) => (
             <PartnerLogo 
               key={`partner-${index}`}
