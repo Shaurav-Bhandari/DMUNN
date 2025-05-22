@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Adbl, Makkuse } from '../assets';
+import { Adbl, Makkuse, EcoSathi } from '../assets';
 import Heading  from '../constants/Heading';
 
 // Component for individual sponsor logo
-const SponsorLogo = ({ name, website, logoPath }) => {
+const SponsorLogo = ({ name, website, logoPath, className }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
@@ -33,9 +33,9 @@ const SponsorLogo = ({ name, website, logoPath }) => {
         <img 
           src={logoPath} 
           alt={`${name} logo`} 
-          className={`max-h-16 max-w-full object-contain mb-2 ${name === "Makkusé" ? "h-20" : "h-12"}`}
+          className={` max-w-full object-contain mb-2 ${className}`}
         />
-        <p className="mt-4 text-lg text-gray-600">{name}</p>
+        <p className="text-lg text-gray-600">{name}</p>
       </div>
       
       <style jsx>{`
@@ -53,8 +53,9 @@ const SponsorLogo = ({ name, website, logoPath }) => {
 const SponsorsPage = () => {
   // Sponsors data - Replace with your actual sponsors data
   const sponsors = [
-    { name: "Makkusé", website: "https://makkuse.com", logoPath: Makkuse },
-    { name: "Agriculture Development Bank", website: "https://adbl.gov.np/en", logoPath: Adbl },
+    { name: "Makkusé", website: "https://makkuse.com", logoPath: Makkuse, className: "h-20" },
+    { name: "Agriculture Development Bank", website: "https://adbl.gov.np/en", logoPath: Adbl, className: "h-12" },
+    { name: "Eco Sathi Nepal", website:"https://ecosathinepal.com", logoPath: EcoSathi, className: "h-[10rem] mt-0" },  
   ];
 
   return (
@@ -70,6 +71,7 @@ const SponsorsPage = () => {
           name={sponsor.name}
           website={sponsor.website}
           logoPath={sponsor.logoPath}
+          className={sponsor.className}
           />
         ))}
       </div>

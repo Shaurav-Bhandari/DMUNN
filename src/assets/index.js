@@ -15,6 +15,7 @@ import Shristi from './images/shristi.png'
 import UNCT from './images/UNCT.png';
 import Siphal from './images/Siphal.png';
 import DWIT from './images/DWIT.png';
+import EcoSathi from './images/EcoSathi.png';
 
 export {
     Logo,
@@ -34,4 +35,5 @@ export {
     UNCT,
     Siphal,
     DWIT,
+    EcoSathi
 };
