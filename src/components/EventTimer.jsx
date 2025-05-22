@@ -36,24 +36,30 @@ const EventTimer = ({ targetDate }) => {
     }, [targetDate]);
 
     return (
-        <div className="flex gap-5 sm:gap-3">
-            <div className="flex flex-col items-center">
-                <span className="text-4xl font-bold">{timeLeft.days}</span>
-                <span className="text-sm">Days</span>
+        (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0) ? (
+            <div className="flex items-center justify-center">
+                <span className="text-4xl font-bold text-green-500">LIVE RIGHT NOW</span>
             </div>
-            <div className="flex flex-col items-center">
-                <span className="text-4xl font-bold">{timeLeft.hours}</span>
-                <span className="text-sm">Hours</span>
+        ) : (
+            <div className="flex gap-5 sm:gap-3">
+                <div className="flex flex-col items-center">
+                    <span className="text-4xl font-bold">{timeLeft.days}</span>
+                    <span className="text-sm">Days</span>
+                </div>
+                <div className="flex flex-col items-center">
+                    <span className="text-4xl font-bold">{timeLeft.hours}</span>
+                    <span className="text-sm">Hours</span>
+                </div>
+                <div className="flex flex-col items-center">
+                    <span className="text-4xl font-bold">{timeLeft.minutes}</span>
+                    <span className="text-sm">Minutes</span>
+                </div>
+                <div className="flex flex-col items-center">
+                    <span className="text-4xl font-bold">{timeLeft.seconds}</span>
+                    <span className="text-sm">Seconds</span>
+                </div>
             </div>
-            <div className="flex flex-col items-center">
-                <span className="text-4xl font-bold">{timeLeft.minutes}</span>
-                <span className="text-sm">Minutes</span>
-            </div>
-            <div className="flex flex-col items-center">
-                <span className="text-4xl font-bold">{timeLeft.seconds}</span>
-                <span className="text-sm">Seconds</span>
-            </div>
-        </div>
+        )
     );
 };
 
@@ -64,4 +70,4 @@ EventTimer.propTypes = {
     ]).isRequired
 };
 
-export default EventTimer;
+export default EventTimer;
